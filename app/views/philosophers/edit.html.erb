@@ -1,0 +1,14 @@
+<h1>Edit</h1>
+
+<h1>New philosopher</h1>
+
+<%= form_for(@philosopher, :html => {:multipart => true}) do |f|%>
+    <%= f.label "philosopher Name: " %>
+    <%= f.text_field :title %>
+
+    <%= f.label "philosopher Image: " %>
+    <!-- f.cl_image_upload :image -->
+
+    <%= f.submit "Edit philosopher"%>
+
+    <% end %>

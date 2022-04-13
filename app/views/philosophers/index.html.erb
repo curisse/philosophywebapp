@@ -1,0 +1,10 @@
+<h1>All philosophers</h1>
+
+<% @philosophers.each do |philosopher|%>
+    <%= link_to philosopher.title, philosopher %>
+<% end %>
+
+
+<%# #@philosophers.each do |philosopher|%>
+    <%# #link_to(philosopher.title, philosopher) %>
+<%# end %>

@@ -1,0 +1,20 @@
+<h1><%= @philosopher.title %> </h1>
+
+ <!--cl_image_tag(@philosopher.image)-->
+
+ <ul>
+    <li>Title: <%= @philosopher.title %> </li>
+    <% if @philosopher.materials.present? %>
+    <% @philosopher.materials.each do |material| %>
+        <li>Work: <%= link_to material.title, material %></li>
+        <% end %>
+    <% end %>
+</ul>
+
+ <div class = "controls">
+    <%= link_to 'Edit philosopher', edit_philosopher_path(@philosopher) %>
+    <%= link_to 'Delete philosopher', @philosopher, :method => 'delete', :data => { :confirm => 'Are you super, super sure?' } %>
+
+
+</div>
+

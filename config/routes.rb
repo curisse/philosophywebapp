@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+  get 'materials/new'
+  get 'material/new'
+  resources :philosophers
+  resources :topics
+  resources :materials
   root :to => 'pages#home'
   resources :users, :only => [:new, :create]
-  resources :mixtapes, :only => [:new, :create, :index]
 
   get '/login' => 'session#new'
-  get '/login' => 'session#create'
+  post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
+
+  
 end
