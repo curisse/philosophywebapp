@@ -1,4 +1,15 @@
 <h1><%= @topic.title %> </h1>
 
-<!--cl_image_tag(@topic.image) 
+ <!--cl_image_tag(@topic.image)-->
+
+ <ul>
+    <% if @topic.materials.present? %>
+    <% @topic.materials.each do |material| %>
+        <li>Material: <%= link_to material.title, material %></li>
+        <li>Author: <%= link_to material.author, material %></li>
+        <% end %>
+    <% end %>
+</ul>
+
+</div>
 

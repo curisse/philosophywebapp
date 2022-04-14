@@ -14,13 +14,13 @@ class PhilosophersController < ApplicationController
   end
 
   def create
-    philosopher = Philosopher.new philosopher_params
+    philosopher = Philosopher.create philosopher_params
     if params[:file].present?
       req = Cloudinary::Uploader.upload(params[:file])
       philosopher.image = req["public_id"]
     end
     philosopher.update_attributes(philosopher_params)
-    philosopher.save
+    # philosopher.save
     redirect_to philosopher_path(philosopher)
   end
 
@@ -40,8 +40,13 @@ class PhilosophersController < ApplicationController
       redirect_to philosopher_path
   end
 
+  def destroy
+    Philosopher.find(params[:id]).destroy
+    redirect_to philosophers_path
+  end
+
   private
   def philosopher_params
-    params.require(:philosopher).permit(:name)
+    params.require(:philosopher).permit(:title, :image)
   end
 end

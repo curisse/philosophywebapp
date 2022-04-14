@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-u1 = User.create :email => 'contact@aleks.co', :password => 'chicken' #, :admin => true
+u1 = User.create :email => 'contact@aleks.co', :password => 'chicken', :admin => true
 puts "#{ User.count } users"
 
 Comment.destroy_all

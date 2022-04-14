@@ -1,2 +1,14 @@
-<h1>Materials#new</h1>
-<p>Find me in app/views/materials/new.html.erb</p>
+<h1>New material</h1>
+
+<%= form_for(@material, :html => {:multipart => true}) do |f|%>
+    <%= f.label "Material name:" %>
+    <%= f.text_field :title, :required => true%>
+
+    <!--how do i automate the title so it is automatically pulled from the link?-->
+
+    <%= f.label "Link to material:" %>
+    <%= f.url_field :link, :required => true %>
+
+    <%= f.submit %>
+
+    <% end %>

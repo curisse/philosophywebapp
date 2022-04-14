@@ -1,8 +1,6 @@
-<h1>Edit</h1>
+<h1>Edit philosopher</h1>
 
-<h1>New philosopher</h1>
-
-<%= form_for(@philosopher, :html => {:multipart => true}) do |f|%>
+<%= form_for(@philosopher) do |f|%> <!--, :html => {:multipart => true}) -->
     <%= f.label "philosopher Name: " %>
     <%= f.text_field :title %>
 
@@ -11,4 +9,4 @@
 
     <%= f.submit "Edit philosopher"%>
 
-    <% end %>
+<% end %>
