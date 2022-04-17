@@ -1,9 +1,14 @@
 <h1>All philosophers</h1>
 
-<% @philosophers.each do |philosopher|%>
+</div>
+
+<h2 class="body">
+
+<% @philosophers.each do |philosopher| %>
     <%= link_to philosopher.title, philosopher %>
 <% end %>
 
+</h2>
 
 <%# #@philosophers.each do |philosopher|%>
     <%# #link_to(philosopher.title, philosopher) %>

@@ -1,6 +1,6 @@
-<h1>Log In</h1>
+<h2>Log In</h2>
 
-<%= form_tag login_path do %>
+<%= form_tag login_path do%>
     <%= label_tag :email %>
     <%= email_field_tag :email %>
 
@@ -10,5 +10,10 @@
     <%= submit_tag "Sign in!" %>
 
 <% end %>
+
+<!--<h2>Reset password</h2>
+
+<%= label_tag :email %>
+<%= email_field_tag :email %>
 
 

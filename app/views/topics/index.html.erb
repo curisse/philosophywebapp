@@ -1,5 +1,9 @@
 <h1>All topics</h1>
 
-<% @topics.each do |topic|%>
-    <%= link_to(topic.title, topic) %>
-<% end %>
+<h2 class="body">
+
+    <% @topics.each do |topic|%>
+        <%= link_to(topic.title, topic) %>
+    <% end %>
+
+</h2>

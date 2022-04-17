@@ -1,15 +1,104 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* {
+   margin: 0 auto;
+   padding: 0px;
+   box-sizing: border-box;
+   font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+   background-color: paleturquoise;
+   align-items: center;
+   display: flex;
+   justify-content: space-around;
+   text-transform: uppercase;
+   letter-spacing: 4px;
+   min-height: 8vh;
+}
+
+h1 {
+   text-align: center;
+   position: relative;
+   top: 40px;
+   text-transform: uppercase;
+}
+
+.logo { 
+   text-transform: uppercase;
+   letter-spacing: 5px;
+}
+
+.buttons {
+   display: flex;
+   font-weight: bold;
+   text-transform: uppercase;
+   font-size: 12px;
+}
+
+.btn {
+   text-decoration: none;
+   padding: 5px 10px;
+   position: relative;
+   margin: 10px;  
+}
+
+.heading {
+   position: relative;
+   top: 350px;
+   right: 400px;
+}
+
+.body {
+   position: relative;
+   top: 60px;
+   display:grid;
+}
+
+.controls {
+
+}
+
+.mobile-view {
+   display: none;
+}
+
+.mobile-view div{
+   width: 25px;
+   height: 2px;
+   background-color: red;
+   margin: 5px;
+}
+
+@media screen and (max-width: 1024px) {
+   .nav {
+      width: 60%;
+   }
+}
+
+@media screen and (max-width: 786px) {
+   body {
+      overflow-y: hidden;
+   }
+
+   .buttons {
+      position: absolute;
+      background-color: grey;
+      right: 0px;
+      height: 92vh;
+      top: 8vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      transform: translateX(100%);
+   }
+
+   .nav-button {
+      display: block;
+   }
+}
+
+
+
+
+
+ 

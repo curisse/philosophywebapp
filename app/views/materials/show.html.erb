@@ -1,12 +1,7 @@
-<h1>Show coming soon...</h1>
+<h1><%= @material.title %> by <%= @material.author %></h1>
 
-<%= @material.author %>
+<h2 class="body">
+
 <%= link_to "#{@material.title}", @material.link %>
 
- <!--cl_image_tag(@material.image)-->
-
- <div class = "controls">
-    <%= link_to 'Add new material', new_material_path(@material) %>
-    
-</div>
-
+</h2>

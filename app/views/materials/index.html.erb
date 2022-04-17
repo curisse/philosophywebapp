@@ -1,5 +1,16 @@
 <h1>All materials</h1>
 
-<% @materials.each do |material|%>
-    <%= link_to material.title, material %>
-<% end %>
+<h2 class="body">
+
+    <% @materials.each do |material|%>
+        <%= link_to material.title, material %>
+        
+    <% end %>
+    
+    <br>
+
+    <%= link_to 'Add new material', new_material_path(@material) %>
+
+</h2>
+
+

@@ -1,36 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
   <head>
-    <title>Project1</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+
+    <title>Philosophy Cloud</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%# cloudinary_js_config %>
+
   </head>
 
   <body>
+
+  <div>
+
     <nav>
-      <%= link_to "Home", root_path %>
 
-      <% if @current_user.present? %>
+        <div class="logo">
+          <h4>Philosophy Cloud</h4>
+        </div>
 
 
-        <%= link_to "Topics", topics_path %>
-        <%= link_to "Philosophers", philosophers_path %>
-        <%= link_to "Sign out #{ @current_user.email }", login_path, method: 'delete' %>
+        <div class="buttons">
 
-      <% else%>
+          <%= link_to "Home", root_path, :class => "btn" %>
 
-        <%= link_to "Sign up", new_user_path %>
-        <%= link_to "Sign in", login_path %>
+            <% if @current_user.present? %>
+            
+            <%= link_to "Materials", materials_path, :class => "btn" %>
+            <%= link_to "Topics", topics_path, :class => "btn" %>
+            <%= link_to "Philosophers", philosophers_path, :class => "btn" %>
+            <%= link_to "Sign out #{ @current_user.email }", login_path, method: 'delete', :class => "btn" %>
+    
+          <% else%>
+            
+            <%= link_to "Sign up", new_user_path, :class => "btn" %>
+            <%= link_to "Sign in", login_path, :class => "btn" %>
 
-      <% end %>
-  
+          <% end %>
+
+        </div>
+
+        <div class="nav-button">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        
+        </div>
+    
     </nav>
 
-    <%= yield %>
+  <%= yield %>
 
   </body>
+
 </html>
