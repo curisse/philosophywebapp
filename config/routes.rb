@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  root :to => 'pages#home'
   resources :philosophers
   resources :topics
   resources :materials
-  root :to => 'pages#home'
+  resources :password_resets
   resources :users, :only => [:new, :create, :edit]
 
   get '/login' => 'session#new'

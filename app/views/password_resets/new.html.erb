@@ -1,0 +1,22 @@
+<h1>Forgot your password?</h1>
+
+<div class="body">
+<%= form_tag password_resets_path, :method => :post do %>
+    <%= label_tag :email %>
+    <%= text_field_tag :email, params[:email], required: true %>
+
+    <%= submit_tag "Reset Password" %>
+
+<% end%>
+
+</div>
+<!--<div class="body">
+
+<%= form_with url: password_resets_path do |form|%>
+    <%= form.label :email %>
+    <%= form.text_field :email, placeholder: "you@gmail.com" %>
+
+    <%= form.submit "Reset Password" %>
+<% end %>
+
+</div>

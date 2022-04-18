@@ -3,10 +3,15 @@
    padding: 0px;
    box-sizing: border-box;
    font-family: 'Montserrat', sans-serif;
+   color: black;
 }
 
+/* body {
+   /* background: rgb(255,224,251);
+background: linear-gradient(90deg, rgba(255,224,251,1) 0%, rgb(255, 239, 177) 100%); 
+} */
+
 nav {
-   background-color: paleturquoise;
    align-items: center;
    display: flex;
    justify-content: space-around;
@@ -15,7 +20,7 @@ nav {
    min-height: 8vh;
 }
 
-h1 {
+h1,h2 {
    text-align: center;
    position: relative;
    top: 40px;
@@ -24,7 +29,7 @@ h1 {
 
 .logo { 
    text-transform: uppercase;
-   letter-spacing: 5px;
+   letter-spacing: 8px;
 }
 
 .buttons {
@@ -36,9 +41,18 @@ h1 {
 
 .btn {
    text-decoration: none;
-   padding: 5px 10px;
    position: relative;
-   margin: 10px;  
+   text-transform: uppercase;
+   font-size: 12px;
+   color: black
+}
+
+.logo-btn {
+   text-decoration: none;
+   position: relative;
+   text-transform: uppercase;
+   font-size: 15px;
+   color: black
 }
 
 .heading {
@@ -53,52 +67,150 @@ h1 {
    display:grid;
 }
 
-.controls {
-
-}
-
-.mobile-view {
+.nav-button {
    display: none;
 }
 
-.mobile-view div{
+.nav-button div{
    width: 25px;
    height: 2px;
-   background-color: red;
-   margin: 5px;
+   background-color: black;
+   margin: 3px;
+   transition: all 0.3s ease;
 }
 
 @media screen and (max-width: 1024px) {
-   .nav {
+   .btn {
       width: 60%;
    }
 }
 
 @media screen and (max-width: 786px) {
+   
    body {
-      overflow-y: hidden;
+      overflow-x: hidden;
    }
 
-   .buttons {
+   .btn {
       position: absolute;
-      background-color: grey;
       right: 0px;
       height: 92vh;
       top: 8vh;
+      background-color: grey;
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 50%;
       transform: translateX(100%);
-   }
-
+      transition: transform 0.5s ease-in;
+      }
+   
    .nav-button {
       display: block;
+      cursor: pointer;
+   }  
+}
+
+.nav-active {
+   transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+   from{
+      opacity: 0;
+      transform: translateX(50px);
+   }
+   to{
+      opacity: 1;
+      transform: translateX(0px);
    }
 }
 
+.toggle .line1 {
+   transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.toggle .line2 {
+   opacity: 0;
+}
+
+.toggle .line3 {
+   transform: rotate(45deg) translate(5px,-6px);
+}
 
 
+/* brain */
 
-
- 
+body{
+	background: darkgrey;
+}
+.brainContainer{
+    width:50vw;
+    height:50vw;
+    max-height:400px;
+    max-width:400px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    overflow:hidden;
+    cursor:pointer;
+    z-index:-1;
+}
+svg{
+    height:100%;
+    width:100%;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+}
+path{
+	fill:transparent;
+}
+.brainPath{
+	stroke:#00ff00;
+	stroke-width:1;
+}
+.brainCircle{
+	stroke:#00FF00;
+	fill:#00FF00;
+}
+.brainRect{
+	stroke:#00FF00;
+	fill:#00FF00;
+}
+.brainEllipse{
+	stroke:#00FF00;
+	fill:#00FF00;
+}
+.animatePaths{
+  animation: goPath 3000ms alternate infinite;
+}
+.animateCircles{
+  animation: goCircle 3000ms alternate infinite;
+}
+.animateRects{
+  animation: goRect 3000ms alternate infinite;
+}
+@keyframes goPath {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes goRect {
+  to {
+    opacity:0;
+  }
+}
+@keyframes goCircle {
+  0% {
+		opacity:0;
+  }
+  50% {
+		opacity:1;
+  }
+  100% {
+		opacity:0;
+  }
+}

@@ -22,25 +22,23 @@
     <nav>
 
         <div class="logo">
-          <h4>Philosophy Cloud</h4>
+          <h3><%= link_to "Philosophy Cloud", root_path, :class => "logo-btn" %></h3>
         </div>
 
 
-        <div class="buttons">
-
-          <%= link_to "Home", root_path, :class => "btn" %>
+        <div>
 
             <% if @current_user.present? %>
             
-            <%= link_to "Materials", materials_path, :class => "btn" %>
-            <%= link_to "Topics", topics_path, :class => "btn" %>
-            <%= link_to "Philosophers", philosophers_path, :class => "btn" %>
-            <%= link_to "Sign out #{ @current_user.email }", login_path, method: 'delete', :class => "btn" %>
+            <%= link_to "Materials", materials_path, :class => "btn"%>
+            <%= link_to "Topics", topics_path, :class => "btn"%>
+            <%= link_to "Philosophers", philosophers_path, :class => "btn"%>
+            <%= link_to "Sign out #{ @current_user.email }", login_path, method: 'delete', :class => "btn"%>
     
           <% else%>
             
-            <%= link_to "Sign up", new_user_path, :class => "btn" %>
-            <%= link_to "Sign in", login_path, :class => "btn" %>
+            <%= link_to "Sign up", new_user_path, :class => "btn"%>
+            <%= link_to "Sign in", login_path, :class => "btn"%>
 
           <% end %>
 
@@ -55,7 +53,11 @@
     
     </nav>
 
+    <p class="notice"><%= flash[:notice] %></p>
+    <p class="alert"><%= flash[:alert] %></p>
+
   <%= yield %>
+  <%= javascript_include_tag 'application' %>
 
   </body>
 

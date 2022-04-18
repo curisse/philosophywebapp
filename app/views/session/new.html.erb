@@ -1,19 +1,30 @@
 <h2>Log In</h2>
 
+<h2 class="body">
+
 <%= form_tag login_path do%>
     <%= label_tag :email %>
     <%= email_field_tag :email %>
-
+<br>
     <%= label_tag :password %>
     <%= password_field_tag :password %>
-
-    <%= submit_tag "Sign in!" %>
+<br>
+<%= submit_tag "Sign in!" %>
 
 <% end %>
 
-<!--<h2>Reset password</h2>
+<br>
+    <%= label_tag :remember_me %>
+    <%= check_box_tag :password, 1, params[:remember_me] %>
+<br>
+    
+    
+</h2>
 
-<%= label_tag :email %>
-<%= email_field_tag :email %>
+<br><br><br><br><br>
 
+<h2>Reset password</h2>
+<h3 class="body">
+<%= link_to "Forgot your password?", new_password_reset_url %>
+</h3>
 
