@@ -1,17 +1,44 @@
 <h1>New material</h1>
+<br><br><br><br>
 
-<h2 class="body">
+<body class="universal">
+
 <%= form_for(@material, :html => {:multipart => true}) do |f|%>
-    <%= f.label "Material name:" %>
-    <%= f.text_field :title, :required => true%>
 
-    <!--how do i automate the title so it is automatically pulled from the link?-->
+<div class="form">
+    
+    <%= f.text_field :title, :required => true, :type => "text", :id => "email", :class => "form__input"  %>
+    <%= f.label "Material name:", :class => "form__label"    %>
+</div>
 
-    <%= f.label "Link to material:" %>
-    <%= f.url_field :link, :required => true %>
+<br>
 
+<div class="form">
+    <%= f.text_field :author, :required => true, :id => "email", :class => "form__input", :type => "text" %>
+    <%= f.label "Material author:", :for => "email", :class => "form__label"   %>
+    
+</div>
+
+<br>
+
+<div class="form">
+    
+    <%= f.url_field :link, :required => true, :id => "email", :class => "form__input", :type => "text"  %>
+    <%= f.label "Link to material:", :for => "email", :class => "form__label"   %>
+</div>
+
+<br>
+
+<div class="form">
+    <%= f.label :topic_id %>
+    <%= f.select(:topic_id, Topic.pluck(:title, :id), :include_blank => true)%>
+</div> 
+
+<h5 class="form">
     <%= f.submit %>
+</h5>
 
-    <% end %>
+<% end %>
 
-</h2>
+
+</body>

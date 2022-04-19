@@ -1,12 +1,26 @@
 <h1>Edit philosopher</h1>
 
+<br><br><br>
+<body class="universal">
+    
+<div class="form">
 <%= form_for(@philosopher) do |f|%> <!--, :html => {:multipart => true}) -->
-    <%= f.label "philosopher Name: " %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :required => true, :type => "text", :id => "email", :class => "form__input" %>
+    <%= f.label "philosopher Name: ", :class => "form__label" %>
+    
+</div>
+<br><br>
 
-    <%= f.label "philosopher Image: " %>
-    <!-- f.cl_image_upload :image -->
+<div class="form">
+    
+    <%= f.text_field :bio, :required => true, :id => "email", :class => "form__input", :type => "text" %>
+    <%= f.label "Philosopher bio:", :for => "email", :class => "form__label"   %>
+</div>
 
+<br><br>
+<div class="form">
     <%= f.submit "Edit philosopher"%>
-
+</div>
 <% end %>
+
+</body>

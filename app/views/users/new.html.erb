@@ -1,6 +1,8 @@
 <h1>Sign up!</h1>
 <br><br><br>
-<h2 class="body">
+
+<body class="universal">
+
 <% if @user.errors.any? %>
     <ul> 
         <% @user.errors.full_messages.each do |msg| %>
@@ -9,19 +11,32 @@
     </ul>
 <% end %>
 
+<div class="form">
 <%= form_for @user do |f| %>
-
-    <%= f.label :email  %>
-    <%= f.email_field :email  %>
-<br>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-<br>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+<%= f.email_field :email, :type => "text", :id => "email", :class => "form__input", :autocomplete => "off", :placehodler => " "   %>
+        <%= f.label :email, nil, :for => "email", :class => "form__label"  %>
+        
+    </div>
     <br>
-    <%= f.submit "Sign up!" %>
+    <div class="form">
+        
+        <%= f.password_field :password, :type => "text", :id => "email", :class => "form__input", :autocomplete => "off", :placehodler => " "  %>
+        <%= f.label :password, nil, :for => "email", :class => "form__label" %>
+    <br>
+    </div>
+    <br>
+    <div class="form">
+        
+        <%= f.password_field :password_confirmation, :type => "text", :id => "email", :class => "form__input", :autocomplete => "off", :placehodler => " "  %>
+        <%= f.label :password_confirmation, nil, :for => "email", :class => "form__label" %>
+    </div>
+
+        <br>
+        <h5 class="body">
+        <%= f.submit "Sign up!" %>
+        </h5>
 
 <% end %>
 
-</h2>
+
+</body>

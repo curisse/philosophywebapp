@@ -1,12 +1,12 @@
-<h1><%= @philosopher.title %> </h1>
+<h1>Materials on: <%= @philosopher.title %> </h1>
 
  <!--cl_image_tag(@philosopher.image)-->
-
+</h2>
  <h2 class="body">
     <% if @philosopher.materials.present? %>
     <% @philosopher.materials.each do |material| %>
-        <li>Material: <%= link_to material.title, material %></li>
-        <li>Author: <%= link_to material.author, material %></li>
+        <ul>Title: <%= link_to material.title, material %></ul>
+        <ul>Author: <%= link_to material.author, material %></ul>
         <% end %>
     <% end %>
 </h2>

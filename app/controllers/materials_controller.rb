@@ -46,6 +46,6 @@ class MaterialsController < ApplicationController
 
   private
   def material_params
-    params.require(:material).permit(:title)
+    params.require(:material).permit(:title, :author, :link, :topic_id)
   end
 end

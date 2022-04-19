@@ -53,12 +53,16 @@
     
     </nav>
 
-    <p class="notice"><%= flash[:notice] %></p>
-    <p class="alert"><%= flash[:alert] %></p>
+    
 
   <%= yield %>
   <%= javascript_include_tag 'application' %>
 
   </body>
+<b></b><b></b><b></b><b></b><b></b>
+    <footer>
+    <p class="notice"><%= flash[:notice] %></p>
+    <p class="alert"><%= flash[:alert] %></p>
+    </footer>
 
 </html>

@@ -1,7 +1,7 @@
 <h1><%= @topic.title %> </h1>
 
- <!--cl_image_tag(@topic.image)-->
-
+<br><br><br><br>
+<h2>
  <ul>
     <% if @topic.materials.present? %>
     <% @topic.materials.each do |material| %>
@@ -9,7 +9,10 @@
         <li>Author: <%= link_to material.author, material %></li>
         <% end %>
     <% end %>
+
 </ul>
 
-</div>
+
+
+</h2>
 

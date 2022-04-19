@@ -1,18 +1,17 @@
-<h1>Edit</h1>
+<h1>Edit material</h1>
 
-<h1>New material</h1>
+<br><br><br>
+<body class="universal">
+    
+<div class="form">
+<%= form_for(@material) do |f|%> <!--, :html => {:multipart => true}) -->
+    <%= f.label "material Name: ", :for => "email", :class => "form__label" %>
+    <%= f.text_field :title, :required => true, :id => "email", :class => "form__input", :type => "text" %>
+</div>
 
-<h2 class="body">
-
-<%= form_for(@material, :html => {:multipart => true}) do |f|%>
-    <%= f.label "material Name: " %>
-    <%= f.text_field :title %>
-
-    <%= f.label "material Image: " %>
-    <!-- f.cl_image_upload :image -->
-
+<div class="form">
     <%= f.submit "Edit material"%>
+</div>
+<% end %>
 
-    <% end %>
-
-</h2>
+</body>
