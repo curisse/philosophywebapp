@@ -486,6 +486,7 @@ function randNum(from, to) {
 
 function setColors(param){
 	var r,g,b;
+	
 //get new random color
 	//lighter if "light" is passed
 	//or if it's day vs. night
